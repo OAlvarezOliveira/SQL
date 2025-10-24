@@ -1,0 +1,5 @@
+# Ignorar archivos de respaldo y modelado
+*.bak
+*.mwb
+*.sql.mwb
+*.sql.mwb.bak
