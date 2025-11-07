@@ -54,7 +54,7 @@ create table tbl_colorOjos (
   codDatos varchar(8),
   constraint PK_tbl_colorOjos PRIMARY KEY (codColorOjos),
   constraint FK_ojos_datosFisicos FOREIGN KEY (codDatos) REFERENCES tbl_datosFisicos (codDatos)
-  on delete cascade
+  on delete restrict
   on update cascade
 );
 
@@ -68,7 +68,7 @@ create table tbl_contactos (
   codDetenido varchar(8),
   constraint PK_tbl_contactos PRIMARY KEY (codContactos),
   constraint FK_contactos_detenidos FOREIGN KEY (codDetenido) REFERENCES tbl_detenidos (codDetenido)
-  on delete cascade
+  on delete restrict
   on update cascade
 );
 
@@ -85,7 +85,7 @@ create table tbl_detencion (
   constraint PK_tbl_detencion PRIMARY KEY (codDetencion),
   constraint UK_expedienteJudicial UNIQUE (expedienteJudicial),
   constraint FK_detencion_detenidos FOREIGN KEY (codDetenido) REFERENCES tbl_detenidos (codDetenido)
-  on delete cascade
+ on delete restrict
   on update cascade
 );
 
@@ -98,7 +98,7 @@ create table tbl_antecedentes (
   codDetenido varchar(8),
   constraint PK_tbl_antecedentes PRIMARY KEY (codAntecedente),
   constraint FK_antecedentes_detenidos FOREIGN KEY (codDetenido) REFERENCES tbl_detenidos (codDetenido)
-  on delete cascade
+  on delete restrict
   on update cascade
 );
 
@@ -112,7 +112,7 @@ create table tbl_presenta (
   on delete cascade
   on update cascade,
   constraint FK_presenta_detenidos FOREIGN KEY (codDetenido) REFERENCES tbl_detenidos (codDetenido)
-  on delete cascade
+  on delete restrict
   on update cascade
 );
 
