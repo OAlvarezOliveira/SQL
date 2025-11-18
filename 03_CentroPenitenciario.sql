@@ -85,7 +85,7 @@ create table tbl_detencion (
   constraint PK_tbl_detencion PRIMARY KEY (codDetencion),
   constraint UK_expedienteJudicial UNIQUE (expedienteJudicial),
   constraint FK_detencion_detenidos FOREIGN KEY (codDetenido) REFERENCES tbl_detenidos (codDetenido)
- on delete restrict
+  on delete restrict
   on update cascade
 );
 
